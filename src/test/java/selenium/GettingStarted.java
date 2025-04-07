@@ -6,18 +6,33 @@ import org.openqa.selenium.chrome.*;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class GettingStarted {
     @Test
-    public void testGoogleSearch() throws InterruptedException {
+    public void testAddTwoNumbers() throws InterruptedException {
         // Optional. If not specified, WebDriver searches the PATH for chromedriver.
         // System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
         WebDriver driver = new ChromeDriver(); //uncomment this one
-        driver.get("https://duckduckgo.com/");
+        driver.get("https://www.marshu.com/articles/calculate-addition-calculator-add-two-numbers.php");
         Thread.sleep(5000);  // Let the user actually see something!
-        WebElement searchBox = driver.findElement(By.name("q"));
-        searchBox.sendKeys("ChromeDriver");
-        searchBox.submit();
+        WebElement first = driver.findElement(By.name("n01"));
+        first.sendKeys("30");
+
+        WebElement second = driver.findElement(By.name("n02"));
+        second.sendKeys("20");
+
+        WebElement button = driver.findElement(By.xpath("/html/body/table/tbody/tr/td[1]/table[2]/tbody/tr[1]/td[2]/table/tbody/tr/td/div[7]/table/tbody/tr/td/table/tbody/tr/td/form/div[2]/div/div/input"));
+        button.click();
+
+        WebElement answer = driver.findElement(By.name("answer"));
+        String actual = answer.getAttribute("value");
+
+        //searchBox.submit();
         Thread.sleep(5000);  // Let the user actually see something!
+        String expected = "50";
+        assertEquals(expected, actual);
+
         driver.quit();
     }
     //add junit4 to the classpath by hovering on it.
