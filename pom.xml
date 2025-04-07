@@ -13,5 +13,14 @@
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <!-- I clicked the latest version of Maven Java inside Maven hq, and copy and paste here. Added the dependencies tag-->
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.31.0</version>
+        </dependency>
+    </dependencies>
+    <!-- Then I clicked upper right (load/sync maven dependency changes) -->
 </project>
