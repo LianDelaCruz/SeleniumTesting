@@ -46,6 +46,12 @@ public class GettingStarted {
 
         String expected = "50";
         assertEquals(expected, actual);*/
+
+        /*We can also use the select if we're testing a formula:
+            Select dropDown = new Select(driver.findElement(By.id("variantSelect"));
+
+            dropDown.selectByIndex(2);
+        */
     }
     //add junit4 to the classpath by hovering on it.
 }
